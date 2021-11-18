@@ -13,6 +13,7 @@ function Box() {
       }}
       ref={ref}
       position={[0, 100, 0]}
+      on
     >
       <boxBufferGeometry attach="geometry" />
       <meshLambertMaterial attach="material" color="red" />
@@ -37,7 +38,8 @@ export default function App() {
     <Container>
       <Header> Jumping Box </Header>
       <Body>
-        <Canvas style={{backgroundColor:"black", height:"100%", width:"100%"}}>
+        <h4 style={{color:"red"}}> Click the box to JUMP! </h4>
+        <Canvas style={{backgroundColor:"black", width:"100%"}}>
           <OrbitControls />
           <Stars />
           <ambientLight intensity={0.5} />
@@ -74,6 +76,8 @@ const Body = styled.div`
   flex: 1;
   padding: 50px;
   display: flex;
+  flex-direction: column;
+  gap: 10px;
   justify-content: center;
   align-items: center;
 `;
